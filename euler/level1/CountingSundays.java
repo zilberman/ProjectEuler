@@ -1,8 +1,5 @@
 package euler.level1;
 
-import java.util.Map;
-import java.util.HashMap;
-
 public class CountingSundays {
 	public static void main(String[] args) {
 		int currentYear = 1900;
