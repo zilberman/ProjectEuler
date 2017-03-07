@@ -21,10 +21,23 @@ public class NonAbundantSums {
 		
 		for (int abundantNumber : abundantNumbers) {
 			int number = abundantNumber;
+			int nextNumber = 0;
 			
 			Iterator<Integer> iterator = abundantNumbers.iterator();
 			while (iterator.hasNext()) {
-				int nextNumber = iterator.next();
+				nextNumber = iterator.next();
+				
+				if (nextNumber == number) {
+					break;
+				}
+			}
+			
+			if (number + nextNumber < NonAbundantSums.upperLimit) {
+					sumsOfTwoAbundantNumbers.add(number + nextNumber);
+			}
+			
+			while (iterator.hasNext()) {
+				nextNumber = iterator.next();
 				
 				if (number + nextNumber < NonAbundantSums.upperLimit) {
 					sumsOfTwoAbundantNumbers.add(number + nextNumber);
